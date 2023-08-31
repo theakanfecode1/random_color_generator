@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:random_color_generator/blocs/color_bloc.dart';
 import 'package:random_color_generator/utils/color_utils.dart';
 
-class ColorChangeScreen extends StatefulWidget {
+class ColorGeneratorScreen extends StatefulWidget {
   @override
-  State<ColorChangeScreen> createState() => _ColorChangeScreenState();
+  State<ColorGeneratorScreen> createState() => _ColorGeneratorScreenState();
 }
 
-class _ColorChangeScreenState extends State<ColorChangeScreen> with TickerProviderStateMixin {
+class _ColorGeneratorScreenState extends State<ColorGeneratorScreen> with TickerProviderStateMixin {
   final ColorBloc _colorBloc = ColorBloc();
   late AnimationController _controller;
   late Animation<double> _animation;

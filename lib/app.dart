@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:random_color_generator/screens/color_change_screen.dart';
+import 'package:random_color_generator/screens/color_generator_screen.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -13,7 +13,7 @@ class App extends StatelessWidget {
         fontFamily: ('Poppins'),
         primarySwatch: Colors.blue,
       ),
-      home: ColorChangeScreen(),
+      home: ColorGeneratorScreen(),
     );
   }
 }
