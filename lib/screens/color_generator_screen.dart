@@ -31,7 +31,8 @@ class _ColorGeneratorScreenState extends State<ColorGeneratorScreen> with Ticker
   Widget build(BuildContext context) {
     return Scaffold(
         body: GestureDetector(
-          onTap: _colorBloc.changeColor,
+          key: Key('change_color_button'),
+          onTap: _colorBloc.generateColor,
           child: StreamBuilder<Color>(
             stream: _colorBloc.colorStream,
             initialData: Colors.black,
@@ -72,6 +73,7 @@ class _ColorGeneratorScreenState extends State<ColorGeneratorScreen> with Ticker
           ),
         ),
         floatingActionButton: FloatingActionButton(
+          key: Key('reset_color_button'),
           onPressed: _colorBloc.resetColor,
           tooltip: 'Reset Color',
           child: const Icon(Icons.refresh),

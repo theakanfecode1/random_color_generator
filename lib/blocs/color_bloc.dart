@@ -7,7 +7,7 @@ class ColorBloc {
   final _colorSubject = BehaviorSubject<Color>();
   Stream<Color> get colorStream => _colorSubject.stream;
 
-  void changeColor() {
+  void generateColor() {
     final randomColor = Color.fromARGB(
       255,
       Random().nextInt(256),
