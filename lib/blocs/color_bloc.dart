@@ -5,7 +5,7 @@ import 'package:rxdart/rxdart.dart';
 
 class ColorBloc {
   final _colorSubject = BehaviorSubject<Color>();
-  Stream<Color> get colorStream => _colorSubject.stream;
+  Stream<Color> get colorGenerationStream => _colorSubject.stream;
 
   void generateColor() {
     final randomColor = Color.fromARGB(

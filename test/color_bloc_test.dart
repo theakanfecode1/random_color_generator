@@ -16,7 +16,7 @@ void main() {
 
     test('Reset color updates the color stream to black', () {
       colorBloc.resetColor();
-      expect(colorBloc.colorStream, emits(Colors.black));
+      expect(colorBloc.colorGenerationStream, emits(Colors.black));
     });
   });
 }
