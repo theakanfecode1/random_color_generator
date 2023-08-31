@@ -7,12 +7,13 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Color Generator',
       theme: ThemeData(
         fontFamily: ('AlbertSans'),
         primarySwatch: Colors.blue,
       ),
-      home: const ColorChangeScreen(),
+      home: ColorChangeScreen(),
     );
   }
 }
