@@ -13,7 +13,7 @@ class _ColorChangeScreenState extends State<ColorChangeScreen> with TickerProvid
   late Animation<double> _animation;
 
   @override
-  initState() {
+  void initState() {
     super.initState();
 
     _controller = AnimationController(
