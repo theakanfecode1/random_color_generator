@@ -7,13 +7,29 @@ class ColorChangeScreen extends StatefulWidget {
   State<ColorChangeScreen> createState() => _ColorChangeScreenState();
 }
 
-class _ColorChangeScreenState extends State<ColorChangeScreen> {
+class _ColorChangeScreenState extends State<ColorChangeScreen> with TickerProviderStateMixin {
   final ColorBloc _colorBloc = ColorBloc();
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  @override
+  initState() {
+    super.initState();
+
+    _controller = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+
+    )..repeat(reverse:true);
+    _animation = CurvedAnimation(
+        parent: _controller,
+        curve: Curves.easeIn
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         body: GestureDetector(
           onTap: _colorBloc.changeColor,
           child: StreamBuilder<Color>(
@@ -24,21 +40,32 @@ class _ColorChangeScreenState extends State<ColorChangeScreen> {
 
               return Container(
                 color: backgroundColor,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Center(
-                      child: Text(
-                        'Hello there',
-                        style: TextStyle(fontSize: 24, color: Colors.white,fontWeight: FontWeight.w600),
+                child: FadeTransition(
+                  opacity: _animation,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Center(
+                        child: Text(
+                          'Hello there',
+                          style: TextStyle(
+                            fontSize: 35,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 16),
-                    Text(
-                      ColorUtils.formatColor(backgroundColor),
-                      style: const TextStyle(fontSize: 18, color: Colors.white),
-                    ),
-                  ],
+                      const SizedBox(height: 15),
+                      Text(
+                        ColorUtils.formatColor(backgroundColor),
+                        style: const TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               );
             },
@@ -49,13 +76,13 @@ class _ColorChangeScreenState extends State<ColorChangeScreen> {
           tooltip: 'Reset Color',
           child: const Icon(Icons.refresh),
         ),
-      ),
-    );
+      );
   }
 
   @override
   void dispose() {
     _colorBloc.dispose();
+    _controller.dispose();
     super.dispose();
   }
 }

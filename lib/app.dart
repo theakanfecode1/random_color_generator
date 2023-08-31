@@ -10,7 +10,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Color Generator',
       theme: ThemeData(
-        fontFamily: ('AlbertSans'),
+        fontFamily: ('Poppins'),
         primarySwatch: Colors.blue,
       ),
       home: ColorChangeScreen(),
