@@ -1,14 +1,50 @@
-# flutter_project_template
-[![flutter_project_template](https://nokycucwgzweensacwfy.supabase.co/functions/v1/get_project_badge?projectName=flutter_project_template)](https://www.worklog.ai)
+# RANDOM COLOR GENERATION
 
-📖 Template for flutter projects using solid_lints, CI for tests and analysis.
+## Overview
 
-- Uses latest stable flutter
-- Repo name as your project name
-- Organization from your profile email address or default
+This Flutter application is a simple example that demonstrates the usage of RxDart for managing state and includes unit tests for the business logic.
 
-# Usage
-1. Press "Use this template" on the menu.
-2. Fill Github form with your new repo name and press "Create repository from template"
-3. Wait for it to be created and set up action is complete. In a couple of minutes, you'll see the flutter project created in your repo once Github Actions are complete.
-4. Clone and code.
+## Features
+
+- Display "Hello there" text in the middle of the screen.
+- Change the background color to a randomly generated color upon tapping the screen.
+- Reset the background color to white using a floating action button.
+- Fade animation for the "Hello there" text.
+- Displays RGB values of the background color.
+- Includes unit and widget tests for the `ColorGeneratorScreen` and `ColorBloc` class using the `test` package.
+
+
+## Libraries and Dependencies
+
+- Flutter: [https://flutter.dev/](https://flutter.dev/)
+- RxDart: [https://pub.dev/packages/rxdart](https://pub.dev/packages/rxdart)
+- Flutter Testing Library: [https://pub.dev/packages/flutter_test](https://pub.dev/packages/flutter_test)
+
+
+## Getting Started
+
+To get started with the application, follow these steps:
+
+1. Clone the repository to your local machine:
+    - git clone https://github.com/theakanfecode1/random_color_generator.git
+
+2. Navigate to the project directory:
+    - cd random_color_generator
+
+3. Install the dependencies:
+    - flutter pub get
+
+4. Run the application:
+    - flutter run
+
+
+## Running Tests
+
+The application includes unit tests to ensure the functionality is working correctly. To execute the
+tests, follow these steps:
+
+1. Navigate to the project directory if you're not already there:
+    - cd random_color_generator
+
+2. Run the tests:
+    - run flutter test --coverage --test-randomize-ordering-seed random
