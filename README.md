@@ -8,7 +8,7 @@ This Flutter application is a simple example that demonstrates the usage of RxDa
 
 - Display "Hello there" text in the middle of the screen.
 - Change the background color to a randomly generated color upon tapping the screen.
-- Reset the background color to white using a floating action button.
+- Reset the background color to black using a floating action button.
 - Fade animation for the "Hello there" text.
 - Displays RGB values of the background color.
 - Includes unit and widget tests for the `ColorGeneratorScreen` and `ColorBloc` class using the `test` package.
