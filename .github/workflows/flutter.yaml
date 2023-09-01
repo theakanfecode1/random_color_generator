@@ -42,7 +42,6 @@ jobs:
 
           if [ dirs_to_analyse != "" ]
           then
-            dart pub cache repair
             dart run dart_code_metrics:metrics \
               analyze \
               $dirs_to_analyse \
